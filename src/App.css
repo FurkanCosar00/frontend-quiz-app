@@ -35,6 +35,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 body {
   background-color: #F4F6FA;
+  transition: background-color 0.3s ease;
 }
 
 /* HEADER */
@@ -48,6 +49,10 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.headerInside img {
+  transition: color 0.3s ease;
 }
 
 /* CHECKBOX */
@@ -116,6 +121,7 @@ input:checked + .slider:before {
   line-height: 40px;
   text-align: left;
   margin-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
 .pageTexts h1:nth-child(2) {
@@ -125,6 +131,17 @@ input:checked + .slider:before {
   line-height: 40px;
   text-align: left;
   margin-bottom: 16px;
+  transition: color 0.3s ease;
+}
+
+.pageTexts p {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+  color: #626C7F;
+  transition: color 0.3s ease;
 }
 
 /* QUESTİON PAGE TEXTS */
@@ -151,12 +168,12 @@ input:checked + .slider:before {
   text-align: left;
   color: #313E51;
   transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .questionTexts button:hover {
   background-color: #f6f6f6;
 }
-
 
 .questionTitle {
   display: flex;
@@ -195,13 +212,6 @@ input:checked + .slider:before {
   gap: 16px;
 }
 
-.answer {
-  background-color: #FFFFFF;
-  box-shadow: 0px 16px 40px 0px #8FA0C124;
-  border-radius: 12px;
-
-}
-
 .answer button {
   display: flex;
   gap: 16px;
@@ -223,11 +233,16 @@ input:checked + .slider:before {
   background-color: #F4F6FA;
   padding: 11px 14px;
   border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 .answer {
   border: 3px solid #FFFFFF;
   transition: border 0.3s ease;
+  background-color: #FFFFFF;
+  box-shadow: 0px 16px 40px 0px #8FA0C124;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
 }
 
 .answers .selected {
@@ -285,6 +300,7 @@ input:checked + .slider:before {
   justify-content: center;
 }
 
+/* FİNİSH PAGE */
 .completeTexts {
   margin: 32px 0px;
 }
@@ -358,4 +374,125 @@ input:checked + .slider:before {
   height: 56px;
   width: 327px;
   transition: background-color 0.3s ease;
+}
+
+.dark {
+    background-color: #313E51;
+
+    .pageTexts h1:nth-child(1) {
+      color: #FFFFFF;
+    }
+    
+    .pageTexts h1:nth-child(2) {
+      color: #FFFFFF;
+    }
+
+    .pageTexts p {
+      color: #ABC1E1;
+    }    
+
+    .questionTexts button {
+      background-color: #3B4D66;
+      color: #FFFFFF;
+      box-shadow: 0px 16px 40px 0px #8FA0C124;
+      transition: background-color 0.3s ease;
+    }
+
+    .headerInside img {
+      filter: brightness(0) invert(1);
+      transition: background-color 0.3s ease;
+    }
+
+    .questionTitle p {
+      color: #FFFFFF;
+    }
+
+    .questionTexts P {
+      color: #ABC1E1;
+    }
+    
+    .questionTexts h2 {
+      color: #FFFFFF;
+    }
+    
+    .answer button p:nth-child(1) {
+      background-color: #F4F6FA;
+      color: #626C7F;
+      padding: 11px 14px;
+      border-radius: 6px;
+    }
+
+    .answer button {
+      background-color: #3B4D66;
+      color: #FFFFFF;
+    }
+
+    .answer {
+      border: 3px solid #3B4D66;
+      transition: border 0.3s ease;
+      background-color: #3B4D66;
+      box-shadow: 0px 16px 40px 0px #8FA0C124;
+      border-radius: 12px;
+    }
+
+    .answers .selected {
+      border: 3px solid #A729F5;
+      border-radius: 12px;
+    }
+
+    .selected button p:nth-child(1) {
+      color: #FFFFFF;
+      background-color: #A729F5;
+      transition: background-color 0.3s ease;
+    }
+    
+    .answers .wrong-answer {
+      border: 3px solid #EE5454;
+      border-radius: 12px;
+    }
+    
+    .wrong-answer button p:nth-child(1) {
+      color: #FFFFFF;
+      background-color: #EE5454;
+    }
+    
+    .answers .correct-answer {
+      border: 3px solid #26D782;
+      border-radius: 12px;
+    }
+    
+    .correct-answer button p:nth-child(1) {
+      color: #FFFFFF;
+      background-color: #26D782;
+    }
+
+    .completeTexts h2:nth-child(1) {
+      color: #FFFFFF;
+    }
+    
+    .completeTexts h2:nth-child(2) {
+      color: #FFFFFF;
+    }
+
+    .scoreBox {
+      background-color: #3B4D66;
+      box-shadow: 0px 16px 40px 0px #313E5124;
+    }
+
+    .submitButton {
+      box-shadow: 0px 16px 40px 0px #313E5124;
+    }
+
+    .scoreBox p:nth-child(1) {
+      color: #FFFFFF;
+    }
+    
+    .scoreBox h1 {
+      color: #FFFFFF;
+
+    }
+    
+    .scoreBox p:nth-child(3) {
+      color: #ABC1E1;
+    }
 }
