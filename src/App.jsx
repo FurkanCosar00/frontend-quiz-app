@@ -17,13 +17,15 @@ function App() {
         ?
         <div className="container">
           <div className="header">
+            <div className="allTexts"></div>
             <DarkMode />
           </div>
 
           <div className="content">
             <div className="pageTexts">
-              <h1 className="welcomeText">Welcome to the</h1>
-              <h1 className="promotionText">Frontend Quiz!</h1>
+              <h1>Welcome to the</h1>
+              <h1>Frontend Quiz!</h1>
+
               <p>Pick a subject to get started.</p>
             </div>
 
@@ -98,9 +100,11 @@ function QuestionPage({quizGenre, setQuizGenre, currentQuestion, setCurrentQuest
 
       if (pText === correctAnswer) {
         answer.classList.add('correct-answer');
+        answer.classList.remove('selected');
       } 
       else if (pText === userAnswer) {
         answer.classList.add('wrong-answer');
+        answer.classList.remove('selected');
       }
     })
 
@@ -113,7 +117,6 @@ function QuestionPage({quizGenre, setQuizGenre, currentQuestion, setCurrentQuest
   } 
 
   const handleNextQuestion = () => {
-    // Yeni soruya geçmeden önce tüm stilleri temizle
     document.querySelectorAll('.answer').forEach((answer) => {
       answer.classList.remove('correct-answer');
       answer.classList.remove('wrong-answer');
@@ -129,8 +132,7 @@ function QuestionPage({quizGenre, setQuizGenre, currentQuestion, setCurrentQuest
   };
 
   useEffect(() => {
-    // Sorular değiştikçe stil class'larını temizle
-    document.querySelectorAll('.answer').forEach((answer) => {
+       document.querySelectorAll('.answer').forEach((answer) => {
       answer.classList.remove('correct-answer');
       answer.classList.remove('wrong-answer');
       answer.classList.remove('selected');
@@ -172,9 +174,9 @@ function QuestionPage({quizGenre, setQuizGenre, currentQuestion, setCurrentQuest
 
                 {!submitted
                   ?
-                  <button onClick={handleSubmit}>Submit Answer</button>
+                  <button className='submitButton' onClick={handleSubmit}>Submit Answer</button>
                   :
-                  <button onClick={handleNextQuestion}>Next Question</button>
+                  <button className='submitButton' onClick={handleNextQuestion}>Next Question</button>
                 }
 
                 {!isSelectedAnswer && <p className="error"><img src="./assets/images/select-error.png" alt="" /> Please select an answer</p>}
@@ -208,18 +210,18 @@ function handlePlayAgain() {
 
       <div className="content">
         <div className="completeTexts">
-          <h2 className="status">Test Tamamlandı</h2>
-          <h2 className="scoreText"><b>Başarın...</b></h2>
+          <h2>Quiz completed</h2>
+          <h2>You scored...</h2>
         </div>
 
         <div className="userScore">
           <div className="scoreBox">
-            <p className="theme"><img src={quizGenre.icon} alt="" />{quizGenre.category}</p>
-            <span>{score}</span>
-            <p>Doğrunuz var tebrikler 🎉</p>
+            <p><img src={quizGenre.icon} alt="" />{quizGenre.category}</p>
+            <h1>{score}</h1>
+            <p>out of 10</p>
           </div>
 
-          <button onClick={handlePlayAgain}>Yeni Test Çöz</button>
+          <button onClick={handlePlayAgain}>Play Again</button>
         </div>
       </div>
     </div>
